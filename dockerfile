@@ -91,7 +91,8 @@ RUN wget https://github.com/PDAL/PDAL/archive/1.0.1.tar.gz && \
 # gippy archive not available on github RUN pip install https://github.com/Applied-GeoSolutions/gippy/archive/${GIPPY_VERSION}.tar.gz
 RUN pip install gippy==${GIPPY_VERSION}
 # lidar2dems
-RUN git clone https://github.com/glw/lidar2dems.git && \
+RUN pip install lxml, shapely, gdal, fiona==1.7.1
+    git clone https://github.com/glw/lidar2dems.git && \
     cd lidar2dems && \
     git checkout ${L2D_CHECKOUT} && \
     ./setup.py install && \
